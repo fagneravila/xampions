@@ -1,5 +1,7 @@
 {
   "name": "XampionsDesleague",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
