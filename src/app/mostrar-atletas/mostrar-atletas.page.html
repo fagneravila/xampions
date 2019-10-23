@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhe do Atleta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-header>
+       
+        <ion-card-subtitle>Atleta:</ion-card-subtitle>
+        <ion-card-title>{{nome}}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+       Usuario: {{usuario}}  <br>
+       Nivel: {{nivel}}
+      
+      </ion-card-content>
+
+      <ion-list>      
+        <ion-item>
+          <ion-label> Time </ion-label>
+          <ion-select [(ngModel)]="idtbtime" placeholder="Select One">
+            <ion-select-option *ngFor="let time of times" [value]='idtbtime'>{{time.idtbtime}} - {{time.descricao}}</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      
+    </ion-card>
+  </ion-content>
+

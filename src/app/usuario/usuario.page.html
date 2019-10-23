@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Lista de Clientes</ion-title>
-    <ion-buttons slot="primary" (click)="addClientes()">
+    <ion-buttons slot="primary" (click)="addAtletas()">
     <ion-button color="success">Novo
       <ion-icon slot="end" name="add"></ion-icon>
     </ion-button>
@@ -46,7 +46,7 @@
     <ion-list  *ngFor="let usuario of usuarios">
         <ion-item-sliding>
                     <ion-item-options side="start">
-            <ion-item-option (click)="editar(usuario.idusuario, usuario.nome, usuario.usuario, usuario.senha)">Editar</ion-item-option>
+            <ion-item-option (click)="editar(usuario.idtbusuario,usuario.nome,usuario.senha,usuario.usuario,usuario.nivel,usuario.idtbtime)">Editar</ion-item-option>
           </ion-item-options>
        
       
@@ -56,8 +56,8 @@
           </ion-item>
 
           <ion-item-options side="end">
-              <ion-item-option color="secundary" (click)="mostrar(usuario.idusuario, usuario.nome, usuario.usuario, cliente.senha)">Mostrar</ion-item-option>
-            <ion-item-option color="danger" (click)="excluir(usuario.id)">Excluir</ion-item-option>
+              <ion-item-option color="secundary" (click)="mostrar(usuario.idtbusuario,usuario.nome,usuario.senha,usuario.usuario,usuario.nivel,usuario.idtbtime)">Mostrar</ion-item-option>
+            <ion-item-option color="danger" (click)="excluir(usuario.idtbusuario)">Excluir</ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>

@@ -21,12 +21,14 @@ const routes: Routes = [
   { path: 'time', loadChildren: './time/time.module#TimePageModule' },
   { path: 'usuario', loadChildren: './usuario/usuario.module#UsuarioPageModule' },
   { path: 'add-atletas', loadChildren: './add-atletas/add-atletas.module#AddAtletasPageModule' },
+  { path: 'add-atletas/:id/:nome/:senha/:usuario/:nivel/:idtbtime', loadChildren: './add-atletas/add-atletas.module#AddAtletasPageModule' },
   { path: 'add-times', loadChildren: './add-times/add-times.module#AddTimesPageModule' },
   { path: 'add-times/:id/:descricao/:ativo', loadChildren: './add-times/add-times.module#AddTimesPageModule' },
   { path: 'mostrar-times', loadChildren: './mostrar-times/mostrar-times.module#MostrarTimesPageModule' },
-  { path: 'mostrar-times/:id/:descricao/:ativo', loadChildren: './mostrar-times/mostrar-times.module#MostrarTimesPageModule' }
-  
-];
+  { path: 'mostrar-times/:id/:descricao/:ativo', loadChildren: './mostrar-times/mostrar-times.module#MostrarTimesPageModule' },
+  { path: 'mostrar-atletas', loadChildren: './mostrar-atletas/mostrar-atletas.module#MostrarAtletasPageModule'},
+  { path: 'mostrar-atletas/:id/:nome/:senha/:usuario/:nivel/:idtbtime', loadChildren: './mostrar-atletas/mostrar-atletas.module#MostrarAtletasPageModule' },
+]
 
 @NgModule({
   imports: [

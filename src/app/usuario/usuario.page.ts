@@ -62,7 +62,7 @@ loadData(event) {
         start: this.start
         
       };
-      this.provider.inserirApi(dados, 'apiCap.php').subscribe(data=>{
+      this.provider.inserirApi(dados, 'appUsers.php').subscribe(data=>{
         for(let usuario of data['result']){
           this.usuarios.push(usuario);
         } resolve(true);
@@ -70,6 +70,29 @@ loadData(event) {
     });
   }
 
+  addAtletas(){
+    this.router.navigate(['/add-atletas']);
+    }
 
-
+    editar(id, nome, senha, usuario, nivel, idtbtime){
+      this.router.navigate(['/add-atletas/'+id+'/'+nome+'/'+senha+'/'+usuario+'/'+nivel+'/'+idtbtime]);
+      }
+      mostrar(id, nome, senha, usuario, nivel, idtbtime){
+        this.router.navigate(['/mostrar-atletas/'+id+'/'+nome+'/'+senha+'/'+usuario+'/'+nivel+'/'+idtbtime]);
+        }
+        excluir(id){
+          return new Promise(resolve =>{
+            let dados ={
+              requisicao: 'excluir',
+              id: id
+            };
+            this.provider.inserirApi(dados, 'appUsers.php')
+            .subscribe(data => {
+              this.ionViewWillEnter();
+          
+            });
+        
+          });
+        }
+      
 }

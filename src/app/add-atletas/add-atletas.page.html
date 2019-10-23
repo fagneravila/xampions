@@ -1,9 +1,58 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>addAtletas</ion-title>
+    
+    <ion-buttons slot="start" (click)="Usuarios()">
+        <ion-button color="success">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+     </ion-buttons>
+    <ion-title>Atletas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content ion-padding>
+    <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input [(ngModel)]="nome"></ion-input>
+      </ion-item>
+        <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input [(ngModel)]="usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input [(ngModel)]="senha" type="password"></ion-input>
+          </ion-item> 
+        <ion-list>      
+          <ion-item>
+            <ion-label> Nivel </ion-label>
+            <ion-select [(ngModel)]="nivel" placeholder="Select One">
+              <ion-select-option value='admin' >Admin</ion-select-option>
+              <ion-select-option value='atleta'>Atleta</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
 
+        
+
+        <ion-list>      
+          <ion-item>
+            <ion-label> Time </ion-label>
+            <ion-select [(ngModel)]="idtbtime" placeholder="Select One">
+              <ion-select-option *ngFor="let time of times" [value]='time.idtbtime'>{{time.idtbtime}} - {{time.descricao}}</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        
+         
+          
+              <ion-button *ngIf="!id" color="success" expand="block" (click)="cadastrar()">
+                Salvar
+              </ion-button>
+
+              <ion-button *ngIf ="id>=1"color="danger" expand="block" (click)="editar()">
+                Editar
+              </ion-button>
+           
 </ion-content>
