@@ -95,4 +95,22 @@ loadData(event) {
           });
         }
       
+
+
+buscar(){
+  return new Promise(resolve => {
+    let dados = {
+      requisicao : 'buscar',
+      nome: this.nome,  
+    };
+    this.provider.inserirApi(dados, 'appUsers.php').subscribe(data=>{
+      this.usuarios=[];
+      for(let usuario of data['result']){
+        this.usuarios.push(usuario);
+      } resolve(true);
+    });
+
+  });
+
+}
 }

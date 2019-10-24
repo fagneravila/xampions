@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Detalhe do Jogo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-card>
+        <ion-card-header>
+         
+          <ion-card-subtitle>Local:</ion-card-subtitle>
+          <ion-card-title>{{localjogo}}</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+         Data e Hora:  {{datajogo}}<br>
+         Valor: R${{valor}}  
+         identificador: {{id}}
+        </ion-card-content>
+      </ion-card>
+      <ion-button color="success" expand="block" (click)="confirmar()">
+          Confirmar
+        </ion-button>
+
+        
+        <ion-card-header>
+         
+           
+            <ion-card-title>Confirmados</ion-card-title>
+          </ion-card-header>
+            <ion-list  *ngFor="let confirmado of confirmados">
+                <ion-item-sliding>
+                  <ion-item>
+                    <ion-label>{{confirmado.nome}}- {{confirmado.idtbusuario}}</ion-label>
+                  </ion-item>
+        
+                  <ion-item-options side="end">
+              
+                    <ion-item-option color="danger" (click)="cancelar(confirmado.idtbusuario)">Cancelar</ion-item-option>
+                  </ion-item-options>
+                </ion-item-sliding>
+              </ion-list>
+            
+              
+    </ion-content>
+    

@@ -6,6 +6,11 @@
     <ion-title>
       Home
     </ion-title>
+    <ion-buttons slot="end">
+        <ion-button color="tertiary"  (click)="logout()">
+          <ion-icon slot="end" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +19,7 @@
       <img src="/assets/shapes.svg" alt="" />
       <ion-card-header>
         <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
+        <ion-card-title>{{nomelogado}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>

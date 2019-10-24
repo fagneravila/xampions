@@ -21,7 +21,7 @@
       <ion-list>      
         <ion-item>
           <ion-label> Time </ion-label>
-          <ion-select [(ngModel)]="idtbtime" placeholder="Select One">
+          <ion-select [(ngModel)]="idtbtime" placeholder="Select One" [interfaceOptions]="customActionSheetOptions" interface="action-sheet">
             <ion-select-option *ngFor="let time of times" [value]='idtbtime'>{{time.idtbtime}} - {{time.descricao}}</ion-select-option>
 
           </ion-select>

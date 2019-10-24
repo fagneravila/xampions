@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -28,6 +28,12 @@ const routes: Routes = [
   { path: 'mostrar-times/:id/:descricao/:ativo', loadChildren: './mostrar-times/mostrar-times.module#MostrarTimesPageModule' },
   { path: 'mostrar-atletas', loadChildren: './mostrar-atletas/mostrar-atletas.module#MostrarAtletasPageModule'},
   { path: 'mostrar-atletas/:id/:nome/:senha/:usuario/:nivel/:idtbtime', loadChildren: './mostrar-atletas/mostrar-atletas.module#MostrarAtletasPageModule' },
+  { path: 'add-jogos', loadChildren: './add-jogos/add-jogos.module#AddJogosPageModule' },
+  { path: 'add-jogos/:id/:localjogo/:datajogo/:valor/:idtbtime', loadChildren: './add-jogos/add-jogos.module#AddJogosPageModule' },
+  { path: 'mostrar-jogos', loadChildren: './mostrar-jogos/mostrar-jogos.module#MostrarJogosPageModule' },
+  { path: 'mostrar-jogos/:id/:localjogo/:datajogo/:valor/:idtbtime', loadChildren: './mostrar-jogos/mostrar-jogos.module#MostrarJogosPageModule' },   
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+
 ]
 
 @NgModule({
