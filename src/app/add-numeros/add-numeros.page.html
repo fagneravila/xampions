@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start" (click)="numeros()">
+        <ion-button color="success">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+     </ion-buttons>
+    <ion-title>+Atletas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content ion-padding>
+    <ion-item>
+    <ion-label position="floating">Identificadador</ion-label>
+    <ion-input [(ngModel)]="id"></ion-input>
+  </ion-item>
+    <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input [(ngModel)]="nome"></ion-input>
+      </ion-item>
+        <ion-item>
+            <ion-label position="floating">Nivel</ion-label>
+            <ion-input [(ngModel)]="nivel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Gols</ion-label>
+            <ion-input [(ngModel)]="gols"></ion-input>
+          </ion-item> 
+          <ion-item>
+              <ion-label position="floating">Passes</ion-label>
+              <ion-input [(ngModel)]="passe" ></ion-input>
+            </ion-item> 
+          <ion-item >
+              <ion-label position="floating">Time</ion-label>
+              <ion-input disabled="true" [(ngModel)]="idtbtime" ></ion-input>
+            </ion-item> 
+       
+          
+              <ion-button  color="success" expand="block" (click)="cadastrar()">
+                Salvar
+              </ion-button>
+
+              
+           
+</ion-content>

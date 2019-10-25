@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de Jogos</ion-title>
+      <ion-buttons slot="start" (click)="home()">
+      <ion-button color="success">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+   </ion-buttons>
+
+    <ion-title>Jogos</ion-title>
     <ion-buttons slot="primary" (click)="addjogos()">
     <ion-button color="success">Novo
       <ion-icon slot="end" name="add"></ion-icon>
@@ -51,6 +57,7 @@
       
      
           <ion-item>
+            
             <ion-label>{{jogo.localjogo}}
                <ion-datetime display-format="DD MMM, YYYY HH:mm" picker-format="h:mm A" value='{{jogo.datajogo}}'></ion-datetime></ion-label>
           </ion-item>

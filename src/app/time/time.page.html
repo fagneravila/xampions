@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de Times</ion-title>
+      <ion-buttons slot="start" (click)="home()">
+          <ion-button color="success">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+       </ion-buttons>
+    <ion-title> Times</ion-title>
     <ion-buttons slot="primary" (click)="addTimes()">
     <ion-button color="success">Novo
       <ion-icon slot="end" name="add"></ion-icon>
@@ -11,6 +16,16 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content ion-padding>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          
+          refreshingSpinner="circles"
+          refreshingText="Carregando...">
+        </ion-refresher-content>
+      </ion-refresher>
 
 <ion-row>
     <ion-col size="9">

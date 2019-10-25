@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController, MenuController } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { PostProvider } from 'src/providers/post-providers';
 
@@ -21,10 +21,18 @@ export class LoginPage implements OnInit {
     private router:Router,
     private provider:PostProvider,
     private storage: NativeStorage,
-    public toast: ToastController
+    public toast: ToastController,
+    public menu: MenuController,
 
   ) { }
 
+ionViewWillEnter(){
+  this.menu.swipeEnable(false);
+}
+
+ionViewDidLeave(){
+  this.menu.swipeEnable(false);
+}
   ngOnInit() {
   }
 

@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Números</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            
+            refreshingSpinner="circles"
+            refreshingText="Carregando...">
+          </ion-refresher-content>
+        </ion-refresher>
+      <ion-card>
+        <ion-card-header>
+         
+          <ion-card-subtitle>Atleta:</ion-card-subtitle>
+        </ion-card-header>
+    
+        <ion-list *ngFor="let numero of numeros">
+          
+            <ion-item >
+              <ion-icon  slot="end" name="logo-ionic"></ion-icon>
+              <ion-label>
+                <b>{{numero.nome}}</b><br>
+                Gols: {{numero.gols}}<br>
+                Passes: {{numero.passes}}<br>
+                Total Pontos: {{numero.pontos}}
+               </ion-label>
+            </ion-item>
+            
+          
+
+          </ion-list>
+  
+       
+        
+      </ion-card>
+      <ion-infinite-scroll  (ionInfinite)="loadData($event)">
+          <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Carregando mais dados">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </ion-content>
+  
+  

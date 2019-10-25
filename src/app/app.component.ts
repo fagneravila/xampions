@@ -22,6 +22,36 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Usuarios',
+      url: '/usuario',
+      icon: 'list'
+    },
+    {
+      title: 'Jogos',
+      url: '/jogo',
+      icon: 'list'
+    },
+    {
+      title: 'Números',
+      url: '/numeros',
+      icon: 'list'
+    },
+    {
+      title: 'Times',
+      url: '/time',
+      icon: 'list'
+    },
+    {
+      title: 'Pagamentos',
+      url: '/pagamentos',
+      icon: 'list'
+    },
+    {
+      title: 'Sair',
+      url: '/numeros',
+      icon: 'list'
     }
   ];
 

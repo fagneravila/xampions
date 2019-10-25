@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Números</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-card>
+        <ion-card-header>
+         
+          <ion-card-subtitle>Atleta:</ion-card-subtitle>
+          <ion-card-title>{{nome}}</ion-card-title>
+        </ion-card-header>
+    
+        <ion-list *ngFor="let numero of numeros">
+          
+            <ion-item >
+              <ion-icon  slot="end" name="logo-ionic"></ion-icon>
+              <ion-label>Gols: {{numero.gols}}</ion-label>
+            </ion-item>
+            <ion-item >
+                <ion-icon  slot="end" name="logo-ionic"></ion-icon>
+                <ion-label>Passes: {{numero.passes}}</ion-label>
+              </ion-item>
+              <ion-item >
+                  <ion-icon  slot="end" name="logo-ionic"></ion-icon>
+                  <ion-label>Total Pontos: {{numero.pontos}}</ion-label>
+                </ion-item>
+          
+
+          </ion-list>
+  
+       
+        
+      </ion-card>
+    </ion-content>
+  
+  

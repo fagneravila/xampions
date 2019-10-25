@@ -1,9 +1,79 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>numeros</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" (click)="home()">
+            <ion-button color="success">
+              <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+         </ion-buttons>
+      <ion-title>Números Atletas</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+  
 
-<ion-content>
+<ion-content ion-padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          
+          refreshingSpinner="circles"
+          refreshingText="Carregando...">
+        </ion-refresher-content>
+      </ion-refresher>
+  
+      
 
-</ion-content>
+  <ion-row>
+      <ion-col size="9">
+          <ion-input [(ngModel)]="nome" type="search" placeholder="Buscar"></ion-input> 
+      </ion-col>
+      <ion-col>
+             <ion-buttons (click)="buscar()">
+              <ion-button>
+                <ion-icon slot="end" name="search"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            
+      </ion-col>
+      
+    </ion-row>
+  
+  
+  <ion-content ion-padding>
+  
+      
+      
+
+  
+      <ion-list  *ngFor="let usuario of usuarios">
+          <ion-item-sliding>
+                      <ion-item-options side="start">
+              <ion-item-option (click)="add(usuario.idtbusuario,usuario.nome,usuario.nivel,usuario.idtbtime)">+Gols+Passes</ion-item-option>
+            </ion-item-options>
+         
+        
+       
+            <ion-item>
+              <ion-label>{{usuario.nome}}</ion-label>
+            </ion-item>
+  
+            <ion-item-options side="end">
+                <ion-item-option color="secundary" (click)="gols(usuario.idtbusuario,usuario.nome,usuario.nivel,usuario.idtbtime)">Gols+Passes</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+        <ion-button  color="success" expand="block" (click)="geral(usuario.idtbtime)">
+            Números Gerais
+          </ion-button>
+          
+        <ion-infinite-scroll  (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="Carregando mais dados">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+      
+  
+    
+  </ion-content>
+  

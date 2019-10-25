@@ -53,6 +53,8 @@ export class MostrarAtletasPage implements OnInit {
       });  
     });
   }
-
+  atleta(){
+    this.router.navigate(['/usuario']);
+    }
 
 }

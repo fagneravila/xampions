@@ -125,4 +125,7 @@ loadData(event)
       });
     
     }
+    home(){
+      this.router.navigate(['/home']);
+      }
 }

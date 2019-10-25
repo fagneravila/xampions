@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de Clientes</ion-title>
+      <ion-buttons slot="start" (click)="home()">
+          <ion-button color="success">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+       </ion-buttons>
+    <ion-title>Atletas</ion-title>
     <ion-buttons slot="primary" (click)="addAtletas()">
     <ion-button color="success">Novo
       <ion-icon slot="end" name="add"></ion-icon>

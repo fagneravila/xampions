@@ -33,7 +33,14 @@ const routes: Routes = [
   { path: 'mostrar-jogos', loadChildren: './mostrar-jogos/mostrar-jogos.module#MostrarJogosPageModule' },
   { path: 'mostrar-jogos/:id/:localjogo/:datajogo/:valor/:idtbtime', loadChildren: './mostrar-jogos/mostrar-jogos.module#MostrarJogosPageModule' },   
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-
+  { path: 'add-numeros', loadChildren: './add-numeros/add-numeros.module#AddNumerosPageModule' },
+  { path: 'add-numeros/:id/:nome/:nivel/:idtbtime', loadChildren: './add-numeros/add-numeros.module#AddNumerosPageModule' },
+  { path: 'mostrar-numeros', loadChildren: './mostrar-numeros/mostrar-numeros.module#MostrarNumerosPageModule' },
+  { path: 'mostrar-numeros/:id/:nome/:nivel/:idtbtime', loadChildren: './mostrar-numeros/mostrar-numeros.module#MostrarNumerosPageModule' },
+  { path: 'mostrar-pagamento', loadChildren: './mostrar-pagamento/mostrar-pagamento.module#MostrarPagamentoPageModule' },
+  {path: 'mostrar-pagamento/:id/:localjogo/:datajogo/:valor/:idtbtime', loadChildren: './mostrar-pagamento/mostrar-pagamento.module#MostrarPagamentoPageModule' },
+  { path: 'mostrar-numgeral', loadChildren: './mostrar-numgeral/mostrar-numgeral.module#MostrarNumgeralPageModule' },
+  { path: 'mostrar-numgeral/:idtbtime', loadChildren: './mostrar-numgeral/mostrar-numgeral.module#MostrarNumgeralPageModule' },
 ]
 
 @NgModule({

@@ -72,6 +72,9 @@ loadData(event) {
   addTimes(){
     this.router.navigate(['/add-times']);
     }
+    home(){
+      this.router.navigate(['/home']);
+      }
 
     editar(id, descricao, ativo){
       this.router.navigate(['/add-times/'+id+'/'+descricao+'/'+ativo]);
